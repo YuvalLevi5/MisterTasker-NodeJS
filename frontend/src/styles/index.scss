@@ -1,0 +1,12 @@
+@import './variables.scss';
+@import './base.scss';
+@import './helpers.scss';
+@import './mixins.scss';
+
+@import './app.scss';
+@import './btn.scss';
+
+//CMPS
+@import './cmps/multi-checkbox.scss';
+@import './cmps/task-table.scss';
+@import './cmps/add-task-modal.scss';
