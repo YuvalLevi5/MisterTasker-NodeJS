@@ -8,10 +8,10 @@ module.exports = {
 
 let gIo
 
-function init(httpServer, corsOptions) {
-  gIo = socketio(httpServer, {
+function init(http) {
+  gIo = socketio(http, {
     cors: {
-      ...corsOptions,
+      origin: '*',
       methods: ["GET", "POST"]
     }
   })
