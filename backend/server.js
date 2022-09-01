@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path')
 
 const logger = require('./services/logger.service');
 const socketService = require('./services/socket.service');
@@ -8,6 +9,7 @@ const taskRoutes = require('./api/task/task.routes');
 
 const app = express();
 const http = require('http').createServer(app);
+require('dotenv').config();
 
 // const {runWorker} = require('./services/tasker.mngr');
 app.use(express.json()); // create the req.body object - from json
@@ -44,6 +46,11 @@ if (process.env.NODE_ENV === 'production') {
 socketService.init(http, corsOptions);
 
 app.use('/api/task', taskRoutes);
+
+app.get('/**', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
+
 
 const port = process.env.PORT || 3030;
 http.listen(port, () => {

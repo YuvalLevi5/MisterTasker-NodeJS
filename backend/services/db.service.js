@@ -14,6 +14,7 @@ var dbConn = null;
 async function connect() {
     if (dbConn) return dbConn;
     try {
+        console.log(`mongodb+srv://${process.env.NODE_JS_API_KEY}@cluster0.xabqg.mongodb.net/?retryWrites=true&w=majority`)
         const client = await MongoClient.connect(url, { useUnifiedTopology: true }, { useNewUrlParser: true });
         const db = client.db(dbName);
         dbConn = db;
