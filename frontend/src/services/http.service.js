@@ -6,7 +6,7 @@ const BASE_URL =
     ? '/api/task'
     : '//localhost:3030/api/task';
 
-// const BASE_URL = (process.env.NODE_ENV !== 'development')
+// const BASE_URL = (process.env.NODE_ENV !=!= 'development')
 //   ? '/api/task'
 //   : '//localhost:3000/api/task';
 
